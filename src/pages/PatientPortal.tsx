@@ -84,7 +84,7 @@ const PatientPortal = () => {
                     </AvatarFallback>
                   </Avatar>
                   <div className="text-center">
-                    <h3 className="font-semibold text-lg text-foreground">{patient.name}</h3>
+                    <h3 className="font-semibold text-lg text-foreground text-center">{patient.name}</h3>
                     
                     <Badge variant="medical" className="mt-2">
                       {patient.memberId}
