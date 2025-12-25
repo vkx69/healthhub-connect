@@ -78,6 +78,44 @@ export type Database = {
           },
         ]
       }
+      health_reminders: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          is_completed: boolean
+          patient_id: string
+          reminder_date: string
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_completed?: boolean
+          patient_id: string
+          reminder_date: string
+          title: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_completed?: boolean
+          patient_id?: string
+          reminder_date?: string
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "health_reminders_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       medical_history: {
         Row: {
           created_at: string | null
