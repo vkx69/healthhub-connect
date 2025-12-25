@@ -11,6 +11,7 @@ const navigation = [
   { name: "Services", href: "/services" },
   { name: "Appointments", href: "/appointments" },
   { name: "Consultation", href: "/consultation" },
+  { name: "Patient Portal", href: "/patient-portal" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
