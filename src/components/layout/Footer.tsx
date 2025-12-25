@@ -57,9 +57,9 @@ export function Footer() {
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-hero">
-                <span className="text-xl font-bold text-primary-foreground">M</span>
+                <span className="text-xl font-bold text-primary-foreground">A</span>
               </div>
-              <span className="text-xl font-bold">MediCare</span>
+              <span className="text-xl font-bold">ArogyaAI</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Your trusted partner in healthcare. We provide comprehensive medical services with compassion and excellence.
@@ -101,8 +101,8 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 text-primary" />
-                <span className="text-sm text-muted-foreground">
-                  123 Medical Center Drive<br />
+                <span className="text-sm text-muted-foreground">123  Center Drive
+Healthcare City, HC 12345<br />
                   Healthcare City, HC 12345
                 </span>
               </li>
@@ -115,9 +115,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary" />
-                <span className="text-sm text-muted-foreground">
-                  info@medicare.com
-                </span>
+                <span className="text-sm text-muted-foreground">info@ ArogyaAI.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="h-5 w-5 text-primary" />
@@ -134,9 +132,7 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t bg-muted/50">
         <div className="container flex flex-col items-center justify-between gap-4 py-6 md:flex-row">
-          <p className="text-sm text-muted-foreground">
-            © 2025 MediCare Hospital. All rights reserved.
-          </p>
+          <p className="text-sm text-muted-foreground">© 2025  ArogyaAI All rights reserved.</p>
           <div className="flex gap-6">
             <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary">
               Privacy Policy
