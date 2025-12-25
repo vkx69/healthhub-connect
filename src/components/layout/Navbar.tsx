@@ -43,7 +43,7 @@ export function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-hero">
-            <span className="text-xl font-bold text-primary-foreground">M</span>
+            <span className="text-xl font-bold text-primary-foreground">A</span>
           </div>
           <span className="text-xl font-bold text-foreground">​ArogyaAI</span>
         </Link>
