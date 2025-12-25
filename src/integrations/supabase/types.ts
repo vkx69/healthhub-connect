@@ -14,7 +14,259 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      medical_history: {
+        Row: {
+          created_at: string | null
+          diagnosis: string | null
+          doctor_name: string
+          doctor_specialty: string | null
+          id: string
+          notes: string | null
+          patient_id: string
+          status: string | null
+          visit_date: string
+          visit_type: string
+        }
+        Insert: {
+          created_at?: string | null
+          diagnosis?: string | null
+          doctor_name: string
+          doctor_specialty?: string | null
+          id?: string
+          notes?: string | null
+          patient_id: string
+          status?: string | null
+          visit_date?: string
+          visit_type: string
+        }
+        Update: {
+          created_at?: string | null
+          diagnosis?: string | null
+          doctor_name?: string
+          doctor_specialty?: string | null
+          id?: string
+          notes?: string | null
+          patient_id?: string
+          status?: string | null
+          visit_date?: string
+          visit_type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "medical_history_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      medical_reports: {
+        Row: {
+          category: string | null
+          created_at: string | null
+          doctor_name: string | null
+          file_path: string | null
+          file_size: string | null
+          file_type: string | null
+          id: string
+          name: string
+          patient_id: string
+          upload_date: string | null
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string | null
+          doctor_name?: string | null
+          file_path?: string | null
+          file_size?: string | null
+          file_type?: string | null
+          id?: string
+          name: string
+          patient_id: string
+          upload_date?: string | null
+        }
+        Update: {
+          category?: string | null
+          created_at?: string | null
+          doctor_name?: string | null
+          file_path?: string | null
+          file_size?: string | null
+          file_type?: string | null
+          id?: string
+          name?: string
+          patient_id?: string
+          upload_date?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "medical_reports_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      patient_allergies: {
+        Row: {
+          allergy: string
+          created_at: string | null
+          id: string
+          patient_id: string
+          severity: string | null
+        }
+        Insert: {
+          allergy: string
+          created_at?: string | null
+          id?: string
+          patient_id: string
+          severity?: string | null
+        }
+        Update: {
+          allergy?: string
+          created_at?: string | null
+          id?: string
+          patient_id?: string
+          severity?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "patient_allergies_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      patient_conditions: {
+        Row: {
+          condition: string
+          created_at: string | null
+          diagnosed_date: string | null
+          id: string
+          patient_id: string
+          status: string | null
+        }
+        Insert: {
+          condition: string
+          created_at?: string | null
+          diagnosed_date?: string | null
+          id?: string
+          patient_id: string
+          status?: string | null
+        }
+        Update: {
+          condition?: string
+          created_at?: string | null
+          diagnosed_date?: string | null
+          id?: string
+          patient_id?: string
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "patient_conditions_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      patients: {
+        Row: {
+          blood_type: string | null
+          created_at: string | null
+          date_of_birth: string | null
+          email: string | null
+          full_name: string
+          id: string
+          member_id: string | null
+          phone: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          blood_type?: string | null
+          created_at?: string | null
+          date_of_birth?: string | null
+          email?: string | null
+          full_name: string
+          id?: string
+          member_id?: string | null
+          phone?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          blood_type?: string | null
+          created_at?: string | null
+          date_of_birth?: string | null
+          email?: string | null
+          full_name?: string
+          id?: string
+          member_id?: string | null
+          phone?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      prescriptions: {
+        Row: {
+          created_at: string | null
+          doctor_name: string
+          dosage: string | null
+          duration_days: number | null
+          id: string
+          medication: string
+          patient_id: string
+          prescribed_date: string
+          purpose: string | null
+          refills_left: number | null
+          status: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          doctor_name: string
+          dosage?: string | null
+          duration_days?: number | null
+          id?: string
+          medication: string
+          patient_id: string
+          prescribed_date?: string
+          purpose?: string | null
+          refills_left?: number | null
+          status?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          doctor_name?: string
+          dosage?: string | null
+          duration_days?: number | null
+          id?: string
+          medication?: string
+          patient_id?: string
+          prescribed_date?: string
+          purpose?: string | null
+          refills_left?: number | null
+          status?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "prescriptions_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
