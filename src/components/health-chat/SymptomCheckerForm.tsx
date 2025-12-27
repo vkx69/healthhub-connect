@@ -146,7 +146,8 @@ export function SymptomCheckerForm({ onSubmit, language }: SymptomCheckerFormPro
                 >
                   <Checkbox
                     checked={selectedSymptoms.includes(symptom.id)}
-                    onCheckedChange={() => toggleSymptom(symptom.id)}
+                    onCheckedChange={() => {}}
+                    onClick={(e) => e.stopPropagation()}
                   />
                   <Label className="text-sm cursor-pointer">{symptom.label}</Label>
                 </div>
